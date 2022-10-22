@@ -10,9 +10,11 @@ namespace my_stack
     {
         private T[] mas; 
         int count;
+        int cap;
         public MyStack(int size)
         {
             mas = new T[size];
+            cap = size;
         }
         public T[] ToArray()
         {
@@ -50,7 +52,7 @@ namespace my_stack
         }
         public int Capacity()
         {
-            return count;
+            return cap;
         }
     }
 }

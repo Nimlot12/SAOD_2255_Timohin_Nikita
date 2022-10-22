@@ -19,70 +19,71 @@ namespace my_stack
             mas = new MyStack<string>(10);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                mas.Push(textBox1.Text);
-                UpdateText();
-            }
-            catch
-            {
-                textBox1.Text = "erorr";
-            }
-            
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                textBox1.Text = mas.Pop();
-                UpdateText();
-            }
-            catch
-            {
-                textBox1.Text = "erorr";
-            }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-        }
 
         void UpdateText()
         {
-            listBox1.Items.Clear();
+            listBox2.Items.Clear();
             foreach (string s in mas.ToArray())
             {
-                listBox1.Items.Add(s);
+                listBox2.Items.Add(s);
 
             }
-            listBox1.Text = listBox1.Text.Trim();
+            listBox2.Text = listBox2.Text.Trim();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
         {
             try
             {
-                textBox1.Text = mas.Top();
+                mas.Push(textBox2.Text);
                 UpdateText();
             }
             catch
             {
-                textBox1.Text = "erorr";
+                textBox2.Text = "erorrrrrrrrrrrrrr";
+                MessageBox.Show("Программа сломалась, ваша логика неверна. Чтобы продолжить работу с программой необходимо занести 2 банки сгущенки разработчикам. Вы согласны продолжить работу? (По факту согласия отправляется email-уведомление в IT-отдел и в бухгалтерию)", "",MessageBoxButtons.YesNoCancel, MessageBoxIcon.Error);
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                textBox2.Text = mas.Pop();
+                UpdateText();
+            }
+            catch
+            {
+                textBox2.Text = "erorrrrrrrrrrrrrr";
+                MessageBox.Show("Программа сломалась, ваша логика неверна. Чтобы продолжить работу с программой необходимо занести 2 банки сгущенки разработчикам. Вы согласны продолжить работу? (По факту согласия отправляется email-уведомление в IT-отдел и в бухгалтерию)", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                textBox2.Text = mas.Top();
+                UpdateText();
+            }
+            catch
+            {
+                textBox2.Text = "erorrrrrrrrrrrrrr";
+                MessageBox.Show("Программа сломалась, ваша логика неверна. Чтобы продолжить работу с программой необходимо занести 2 банки сгущенки разработчикам. Вы согласны продолжить работу? (По факту согласия отправляется email-уведомление в IT-отдел и в бухгалтерию)", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
         {
             int p = mas.Capacity();
-            textBox1.Text = p.ToString();
+            textBox2.Text = p.ToString();
         }
     }
 
